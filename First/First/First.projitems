@@ -13,10 +13,12 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ContentPageExample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DB.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Words.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Word.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Words.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">

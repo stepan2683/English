@@ -13,7 +13,7 @@ namespace First
 		{
 			InitializeComponent();
 
-            MainPage = new ContentPageExample();
+            MainPage = new MainPage();
 
 			// MainPage = new First.MainPage();
 		}

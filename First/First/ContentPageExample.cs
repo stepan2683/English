@@ -8,7 +8,7 @@ namespace First
     class ContentPageExample : ContentPage
     {
 
-        private Pair PairAct;
+        private Words PairAct;
         private Words Words;
         private bool CzWord;
         private Label TextPlace;
@@ -63,7 +63,7 @@ namespace First
 
             IKnow = new Button
             {
-                Text = "Start",
+                Text = "Start0",
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button)),
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.Fill,
@@ -119,34 +119,34 @@ namespace First
 
         private void IDontKnow_Clicked(object sender, EventArgs e)
         {
-            TextPlace.Text = PairAct.En;
-            CzTextPlace.Text = "(" + PairAct.Cz + ")";
-            IKnow.Text = "Next one";
-            CzWord = true;
-            IDontKnow.IsVisible = false;
+            //TextPlace.Text = PairAct.En;
+            //CzTextPlace.Text = "(" + PairAct.Cz + ")";
+            //IKnow.Text = "Next one";
+            //CzWord = true;
+            //IDontKnow.IsVisible = false;
         }
 
         private void OnClickOnButton(object sender, EventArgs e)
         {        
 
-            if (CzWord)
-            {
-                PairAct = Words.GetRandom();
-                TextPlace.Text = PairAct.Cz;
-                CzTextPlace.Text = "";
-                CzWord = false;
-                IKnow.Text = "I know";
-                IDontKnow.Text = "I don't know";
-                IDontKnow.IsVisible = true;
-            }
-            else
-            {
-                TextPlace.Text = PairAct.En;
-                CzTextPlace.Text = "(" + PairAct.Cz + ")";
-                IKnow.Text = "Next one";
-                CzWord = true;
-                IDontKnow.IsVisible = false;
-            }
+            //if (CzWord)
+            //{
+            //    PairAct = Words.GetRandom();
+            //    TextPlace.Text = PairAct.Cz;
+            //    CzTextPlace.Text = "";
+            //    CzWord = false;
+            //    IKnow.Text = "I know";
+            //    IDontKnow.Text = "I don't know";
+            //    IDontKnow.IsVisible = true;
+            //}
+            //else
+            //{
+            //    TextPlace.Text = PairAct.En;
+            //    CzTextPlace.Text = "(" + PairAct.Cz + ")";
+            //    IKnow.Text = "Next one";
+            //    CzWord = true;
+            //    IDontKnow.IsVisible = false;
+            //}
         }
     }
 }

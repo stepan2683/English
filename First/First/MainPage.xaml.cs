@@ -12,12 +12,22 @@ namespace First
 	public partial class MainPage : ContentPage
 	{
 
-        public string Word;
         public string CzWord;
+        public Words Words;
+        public Word Word;
 
 		public MainPage()
 		{
 			InitializeComponent();
-		}
-	}
+
+            DB.PrepareDB();
+            Words = new Words();
+
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Word = Words.GetRandom();
+        }
+    }
 }

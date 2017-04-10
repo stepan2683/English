@@ -1,4 +1,5 @@
-﻿using System;
+﻿using First;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,38 +7,48 @@ namespace First
 {
     public class Words
     {
-        public List<Pair> WordsDics;
+        public List<Word> WordsDics;
 
         public Words()
         {
-            WordsDics = LoadWords();
+            WordsDics = DB.GetAll();
         }
 
-        private List<Pair> LoadWords()
+        public List<Word> GetAll()
         {
-            List<Pair> r = new List<Pair>();
+            return DB.GetAll();
+        }
+
+        // TODO: delete
+        private List<Word> LoadWords()
+        {
+            List<Word> r = new List<Word>();
 
 
-            r.Add(new Pair(cz: "těšit se", en: "look forward to"));
-            r.Add(new Pair(cz: "zapnout", en: "turn on"));
-            r.Add(new Pair(cz: "vyzkoušet", en: "try on"));
-            r.Add(new Pair(cz: "vzlétnout", en: "take off"));
-            r.Add(new Pair(cz: "odhlásit se", en: "check out of"));
-            r.Add(new Pair(cz: "odmítnout", en: "turn down"));
-            r.Add(new Pair(cz: "vypnout", en: "turn off"));
-            r.Add(new Pair(cz: "vrátit se (přinést zpět)", en: "bring back"));
-            r.Add(new Pair(cz: "vrátit (na svoje místo)", en: "put back"));
-            r.Add(new Pair(cz: "omdlít", en: "pass out"));
-            r.Add(new Pair(cz: "zhlasit", en: "turn up"));
-            r.Add(new Pair(cz: "otočit se", en: "turn around"));
-            r.Add(new Pair(cz: "roztrhnout", en: "tear up"));
-            r.Add(new Pair(cz: "jít s", en: "go with"));
-            r.Add(new Pair(cz: "nasednout", en: "get on"));
-            r.Add(new Pair(cz: "ztlumit", en: "turn down"));
-            r.Add(new Pair(cz: "vloupat se", en: "break into"));
-            r.Add(new Pair(cz: "jíst venku", en: "eat out"));
-            r.Add(new Pair(cz: "odbavit, zaregistrovat", en: "check in to"));
-            r.Add(new Pair(cz: "vyplnit", en: "fill in"));
+
+            #region words
+
+            /*
+            r.Add(new Word(cz: "těšit se", en: "look forward to"));
+            r.Add(new Word(cz: "zapnout", en: "turn on"));
+            r.Add(new Word(cz: "vyzkoušet", en: "try on"));
+            r.Add(new Word(cz: "vzlétnout", en: "take off"));
+            r.Add(new Word(cz: "odhlásit se", en: "check out of"));
+            r.Add(new Word(cz: "odmítnout", en: "turn down"));
+            r.Add(new Word(cz: "vypnout", en: "turn off"));
+            r.Add(new Word(cz: "vrátit se (přinést zpět)", en: "bring back"));
+            r.Add(new Word(cz: "vrátit (na svoje místo)", en: "put back"));
+            r.Add(new Word(cz: "omdlít", en: "pass out"));
+            r.Add(new Word(cz: "zhlasit", en: "turn up"));
+            r.Add(new Word(cz: "otočit se", en: "turn around"));
+            r.Add(new Word(cz: "roztrhnout", en: "tear up"));
+            r.Add(new Word(cz: "jít s", en: "go with"));
+            r.Add(new Word(cz: "nasednout", en: "get on"));
+            r.Add(new Word(cz: "ztlumit", en: "turn down"));
+            r.Add(new Word(cz: "vloupat se", en: "break into"));
+            r.Add(new Word(cz: "jíst venku", en: "eat out"));
+            r.Add(new Word(cz: "odbavit, zaregistrovat", en: "check in to"));
+            r.Add(new Word(cz: "vyplnit", en: "fill in"));
             
 
             // v2.0
@@ -196,31 +207,19 @@ namespace First
             r.Add(new Pair(cz: "odejít", en: "leave"));
             r.Add(new Pair(cz: "vynalézavý", en: "invented"));
             r.Add(new Pair(cz: "účel", en: "purpose"));
+            */
 
-
-
+            #endregion words
 
 
             return r;
         }
 
-        public Pair GetRandom()
+        public Word GetRandom()
         {
             Random a = new Random();
             var random = a.Next(0, WordsDics.Count);
             return WordsDics[random];
         }
     }
-
-    public class Pair
-    {
-        public string Cz { get; set; }
-        public string En { get; set; }
-        public Pair(string cz, string en)
-        {
-            Cz = cz;
-            En = en;
-        }
-    }
-
 }

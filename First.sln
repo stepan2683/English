@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "First.Droid", "First\First.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "First.iOS", "First\First.iOS\First.iOS.csproj", "{78F22551-E760-4CD9-B215-9E67748F80C2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlLiteDB", "SqlLiteDB", "{3132F9CA-9217-4B11-8A01-76A4F093DE7D}"
+	ProjectSection(SolutionItems) = preProject
+		First\First.DB\SqlLiteDB.db = First\First.DB\SqlLiteDB.db
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		First\First\First.projitems*{6e8ef730-ba89-4ae1-885d-6795bfb2825c}*SharedItemsImports = 4
