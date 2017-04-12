@@ -1,45 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"             
              xmlns:local="clr-namespace:First"
+             mc:Ignorable="d"
              x:Class="First.MainPage">
+    <StackLayout>
 
-	<Label Text="{Binding Path=Word, Mode=TwoWay}"
-           VerticalOptions="Center" 
-           HorizontalOptions="Center"
-           FontSize="46"
-           TextColor="Black"
-           Margin="0, 20, 0, 0"
-           />
+        <Label Text="{Binding Path=CzWord, Mode=TwoWay}"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="38"
+               TextColor="White"
+               Margin="0, 20, 0, 0"
+               />        
+        
+        <Label Text="{Binding Path=EnWord, Mode=TwoWay}"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="46"
+               TextColor="Blue"
+               />
 
-    <Label Text="{Binding Path=CzWord, Mode=TwoWay}"
-           VerticalOptions="Center" 
-           HorizontalOptions="Center"
-           FontSize="Medium"
-           TextColor="Gray"
-           />
+        <!-- I know button -->
+        <Button Text="Start"
+                FontSize="Large"
+                BorderColor="Black"
+                TextColor="Green"
+                Margin="0, 30, 0, 0"
+                WidthRequest="140"
+                HeightRequest="80"
+                IsVisible="{Binding IKnowButtonVisible}"
+                Clicked="Button_Clicked"
+                />
 
-    <!-- I know button -->
-    <Button Text="Start"
-            FontSize="Large"
-            BorderColor="Black"
-            TextColor="Green"
-            Margin="0, 30, 0, 0"
-            WidthRequest="200"
-            HeightRequest="80"
-            Clicked="Button_Clicked"
-            />
+      <!-- I dont know button -->
+      <Button Text="I dont know"
+              FontSize="Large"
+              BorderColor="Black"
+              TextColor="Red"
+              Margin="0, 30, 0, 0"
+              WidthRequest="140"
+              HeightRequest="80"
+              IsVisible="{Binding IDontKnowButtonVisible}"
+              Clicked="ButtonIDK_Clicked"
+                />
+    
+        <!-- podpis 1 -->
+        <Label Text="Pro mojí lásku od Štěpána" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="End" TextColor="Gray" />
+    
+        <!-- podpis 2 -->
+        <Label Text="stepan2683@gmail.com" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="End" TextColor="Gray" />
 
-  <!-- I dont know button -->
-  <Button Text="I dont know"
-          FontSize="Large"
-          BorderColor="Black"
-          TextColor="Green"
-          Margin="0, 30, 0, 0"
-          WidthRequest="200"
-          HeightRequest="80"
-          Clicked="ButtonIDK_Clicked"
-            />
-
-
+    </StackLayout>
 </ContentPage>
