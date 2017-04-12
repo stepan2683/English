@@ -12,9 +12,9 @@ namespace First
 	public partial class MainPage : ContentPage
 	{
 
-        public string CzWord;
+        public string CzWord { get; set; }
+        public string EnWord { get; set; }
         public Words Words;
-        public Word Word;
 
 		public MainPage()
 		{
@@ -27,7 +27,17 @@ namespace First
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Word = Words.GetRandom();
+            var b = (Button)sender;
+            if (b.Text == "Start")
+            {
+                b.Text = "I know";
+            }
+            
+
+
+            Word word = Words.GetRandom();
+            CzWord = word.WordCZ;
+            EnWord = word.WordEN;
         }
     }
 }

@@ -19,7 +19,7 @@
            TextColor="Gray"
            />
 
-    <Button Text="Start1"
+    <Button Text="Start"
             FontSize="Large"
             BorderColor="Black"
             TextColor="Green"
