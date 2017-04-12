@@ -39,5 +39,11 @@ namespace First
             CzWord = word.WordCZ;
             EnWord = word.WordEN;
         }
+
+        private void ButtonIDK_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

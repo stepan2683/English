@@ -8,7 +8,6 @@ namespace First
 {
     public static class DB
     {
-        public const string GET_ALL = @"SELECT Id, WordCZ, WordEN, IsFraze, Weight FROM Words";
 
         private static SQLiteConnection DBConnect()
         {
@@ -40,10 +39,10 @@ namespace First
                 var data = conn.Table<Word>();
                 if (data.Count() == 0)
                 {
-                    conn.Insert(new Word { WordCZ = "ahoj", WordEN = "hello", IsFraze = false, Weight = 0 });
-                    conn.Insert(new Word { WordCZ = "mama", WordEN = "mum", IsFraze = false, Weight = 0 });
-                    conn.Insert(new Word { WordCZ = "deda", WordEN = "grandpa", IsFraze = false, Weight = 0 });
-                    conn.Insert(new Word { WordCZ = "vec", WordEN = "thing", IsFraze = false, Weight = 0 });
+                    conn.Insert(new Word { WordCZ = "ahoj", WordEN = "hello", IsFraze = false, Weight = 2 });
+                    conn.Insert(new Word { WordCZ = "mama", WordEN = "mum", IsFraze = false, Weight = 2 });
+                    conn.Insert(new Word { WordCZ = "deda", WordEN = "grandpa", IsFraze = false, Weight = 2 });
+                    conn.Insert(new Word { WordCZ = "vec", WordEN = "thing", IsFraze = false, Weight = 2 });
 
                     #region words
 
@@ -250,6 +249,18 @@ namespace First
                 }
             }
             return allWithWeight;
+        }
+
+        /// <summary>
+        /// Update one Word (by primary key - Id)
+        /// </summary>
+        /// <param name="item"></param>
+        public static void Update(Word item)
+        {
+            using (var conn = DBConnect())
+            {
+                conn.Update(item);
+            }
         }
     }
 }

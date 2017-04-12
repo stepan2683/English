@@ -23,6 +23,11 @@ namespace First
             return DB.GetAll();
         }
 
+        public void UpdateOne(Word item)
+        {
+            DB.Update(item);
+        }
+
         /// <summary>
         /// returns one random Word according to weight
         /// </summary>
